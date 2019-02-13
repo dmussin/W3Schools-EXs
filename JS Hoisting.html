@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Hoisting</title>
+</head>
+<body>
+<p>In JavaScript, a variable can be declared after it has been used.
+
+In other words; a variable can be used before it has been declared.
+
+Example 1 gives the same result as Example 2:</p>
+
+<h3>EXAMPLE 1</h3>
+
+<p id="demo1"></p>
+
+<script>
+	var x; //Declarate x 
+	x = 5; //Assign 5 to x 
+
+	elem = document.getElementById("demo1"); //Find an element
+	elem.innerHTML = x; // Display X and Y 
+</script>
+
+<h3>EXAMPLE 2</h3>
+
+<p id="demo2"></p>
+
+<script>
+	x = 5; //Assingn 5 to x 
+
+	elem = document.getElementById("demo2"); 
+	elem.innerHTML = x; 
+
+	var x; //Declare x 
+</script>
+
+
+
+<h2> JavaScript Initializations are Not Hoisted <br>
+JavaScript only hoists declarations, not initializations.<br>
+
+Example 1 does not give the same result as Example 2:</h2>
+
+<p id="demo3"></p>
+
+<script>
+	var x = 5; // Initialize x 
+	var y = 7; // Initialize y 
+
+	elem = document.getElementById("demo3"); 
+	elem.innerHTML = x + " " + y; 
+</script>
+
+<br>
+<br>
+
+<p id="demo4"></p>
+
+<script>
+	var x = 5; //Initialize x
+
+	elem = document.getElementById("demo4"); 
+	elem.innerHTML = "x is "+ x+ " and z is " + z; 
+
+	var z = 7; 
+</script>
+
+<p id="demo5"></p>
+
+<script>
+	var x = 5; 
+	var d; 
+	f = 10; 
+
+	elem = document.getElementById("demo5");
+	elem.innerHTML = "x is " + x + " d is  " + d + " f is " + f; 
+
+	d = 8;
+	var f;
+</script>
+
+</body>
+</html>

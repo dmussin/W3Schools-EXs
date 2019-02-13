@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Let</title>
+</head>
+<body>
+
+<h4>
+	ECMAScript 2015 <br>
+ES2015 introduced two important new JavaScript keywords: let and const. <br>
+
+These two keywords provide Block Scope variables (and constants) in JavaScript. <br>
+
+Before ES2015, JavaScript had only two types of scope: Global Scope and Function Scope. 
+</h4>
+
+
+<p> 1) A GLOBAL variable can be accessed from any script or function.</p>
+
+<p id="demo"></p>
+
+<script>
+	var carName = "Ford"; 
+	myFunction(); 
+
+	function myFunction(){
+		document.getElementById("demo").innerHTML = " i can display " + carName; 
+	}
+</script>
+
+
+<p> 2) Outside myFunction() carName is undefined.</p>
+
+<p id="demo2"></p>
+
+<p id="demo3"></p>
+
+<script>
+	myFunction(); 
+
+	function myFunction(){
+		var carName2 = "volvo"; 
+		document.getElementById("demo2").innerHTML = typeof carName2 + " " + carName2; 
+	}
+
+	document.getElementById("demo3").innerHTML = typeof carName2;
+</script>
+
+
+<h3> 3) JavaScript Block Scope <br>
+Variables declared with the var keyword can not have Block Scope. <br>
+
+Variables declared inside a block {} can be accessed from outside the block.</h3>
+
+
+<h2>Declaring a Variable Using let</h2>
+
+<p id="demo5"></p>
+
+<script>
+var  y = 11;
+// Here x is 10
+{  
+  let y = 2;
+  // Here x is 2
+}
+// Here x is 10
+document.getElementById("demo5").innerHTML = y;
+</script>
+
+
+<h2>Declaring a Variable Using var</h2>
+
+
+<p id="demo4"></p>
+
+<script>
+	
+	var x = 10; 
+	//here x is 10
+	{
+		var x = 2; 
+		// here x is 2 
+	}
+
+     //here x is 2 
+     document.getElementById("demo4").innerHTML = x; 
+</script>
+</body>
+</html>
