@@ -1,0 +1,232 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Form element</title>
+</head>
+<body>
+
+<input type="text"> <br> 
+<input type="radio"> <br> 
+<input type="submit"> <br> 
+
+
+<form> 
+	First name: <br> 
+	<input type="text" name="First name"><br> 
+	Last name <br> 
+	<input type="text" name="Last name"><br>
+</form>
+
+<br> 
+<br> 
+/* Radio Button */ 
+
+<form>
+	<input type="radio" name="gender" value="male"> Male <br>
+	<input type="radio" name="gender" value="female"> Female <br>
+	<input type="radio" name="gender" value="other"> Other <br>
+</form>
+
+<br> 
+<br> 
+/* The Submit Button */
+
+<form action="https://www.w3schools.com/action_page.php" target="_blank">
+	First name: 
+	<input type="text" name="Firstname"><br>
+	Last name: 
+	<input type="text" name="Lastname"><br>
+	<input type="submit" value="Submit">
+</form>
+<br><br><br>
+/* Grouping Data with fieldset */
+
+<form action="https://www.w3schools.com/action_page.php" target="_blank">
+	<fieldset>
+		<legend>Personal Info</legend>
+		First Name: 
+		<input type="text" name="firstname"><br>
+		Last Name:
+		<input type="text" name="lastname"><br>
+		<br>
+		<input type="submit" value="submit">
+	</fieldset>
+	</fieldset>
+
+/* The select element 
+
+<form action="https://www.w3schools.com/action_page.php" target="_self">
+
+<select name="cars" size="2"> 
+	<option value="Volvo">Volvo</option>
+	<option value="Mercedes">Mercedes</option>
+	<option value="BMW">BMW</option>
+	<option value="Audi">Audi</option>
+</select>
+
+<input type="submit" value="submit">
+
+</form>
+
+
+<textarea name="message" rows="10" cols="30"> The cat is playing ib the garddenb</textarea>
+
+<textarea name="message" style="width:200px; height:600px;"> The cat playing </textarea>
+
+
+<button type="button" onclick="alert('Hello World')">Click ME!</button>
+
+
+<form action="https://www.w3schools.com/action_page.php">
+	<input list="broswers">
+	<datalist id="broswers">
+		<option value="Chrome"></option>
+		<option value="IE"></option>
+		<option value="Safari"></option>
+	</datalist>
+</form>
+
+<br> 
+<br> <br> 
+
+<form action="https://www.w3schools.com/action_page.php" 
+oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+
+0 
+<input type="range" id="a" name="a" value="50">
+
+100+ 
+<input type="number" id="b" name="b" value="50">
+
+=
+
+<output name="x" for="a b"></output>
+
+<br><br>
+
+<input type="submit" value="submit">
+
+</form>
+
+
+<br><br>
+
+<form>
+	User name: <br>
+	<input type="text" name="username"><br>
+	User password: <br>
+	<input type="password" name="psw"><br>
+
+	<input type="checkbox" name="vechicle1" value="Bike"> I have a bike <br>
+	<input type="checkbox" name="vechicle2" value="Car"> I have a car 
+
+</form>
+
+
+
+
+<br>
+<br>
+
+<form> 
+	Select you favorite color: 
+	<input type="color" name="favcolor"> 
+</form>
+
+
+<form>
+	Birthday: 
+	<input type="date" name="bday"
+</form>
+<br>
+<br>
+
+
+<form> 
+	Enter date before 1980
+	<input type="date" name="bday" max="1979-12-31">
+	<br>
+	Enter date after 2000
+<input type="date" name="bday" min="2000-01-01">
+</form>
+
+<br><br>
+
+
+<form style="font-size: 30px; background-color: tomato; color: white;" > 
+	Birthday: 
+	<input type="time" name="bdaytime">
+</form>
+<br><br>
+
+<form action="https://www.w3schools.com/action_page.php">
+<form style="font-size: 40px">
+	Email Form: 
+<input type="email" name="email">
+<br>
+<br>
+File upload form: 
+<input type="file" name="file">
+
+<br>
+<br>
+
+Select month and year:
+<input type="month" name="bdaymonth">
+
+
+<br>
+<br>
+
+Quantity (between 1 nad 5):
+
+<input type="number" name="Quantity" min="1" max="5">
+
+<br>
+<br>
+
+Select range: 
+
+<input type="range" name="points" min="10" max="100" step="10">
+<input type="submit" name="submit" value="submit">
+
+
+<br>
+<br>
+
+Search Google: 
+
+<input type="Search" name="searchgoogle">
+
+<br>
+<br>
+
+Time: 
+<input type="time" name="time">
+
+<br>
+<br>
+
+Week: 
+<input type="week" name="week_year">
+
+<br>
+<br>
+
+URL: 
+
+<input type="URL" name="URL">
+
+
+<br>
+<br>
+
+</form>
+</form>
+
+<br>
+<br>
+
+
+</body>
+</html>

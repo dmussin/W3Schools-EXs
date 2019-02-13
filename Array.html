@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Arrays</title>
+
+	<style>
+	body {background-color: tomato;
+		color: white; 
+		font-size: 30PX;} 
+
+		h2 {color: black}
+</style>
+</head>
+<body>
+<p id="demo"></p>
+
+<script>
+	var cars = ["Saab", "VW", "BMW"];
+	document.getElementById("demo").innerHTML = cars;
+</script>
+
+
+<h2>Access the Elements of an Array</h2>
+
+<p id="access"></p>
+
+<script>
+	var cars = ["VW", "BMW", "Fod"]; 
+	document.getElementById("access").innerHTML = cars[cars.length - 1];
+</script>
+
+
+<h2>Changing the Array</h2>
+
+<p id="chang"></p>
+<p id="bchang"></p>
+<p id="chang2"></p>
+<p id="chang3"></p>
+
+<script>
+	var cars = ["VW " , "BMW " , "Ford"]; 
+	document.getElementById("bchang").innerHTML = cars; 
+
+	cars[0] = "mercedes"; 
+	document.getElementById("chang").innerHTML = cars; 
+
+	var x = cars.length;
+	document.getElementById("chang2").innerHTML = x;
+
+	var y = cars.sort(); 
+	document.getElementById(chang3).innerHTML = y; 
+
+</script>
+
+<h2>JS uses names to access object properties</h2>
+
+<p id="access1"></p>
+
+<script>
+	var person = {firstName:"John",lastName:"Doe", age:46}; 
+	document.getElementById("access1").innerHTML = person["firstName"] + " " + person["lastName"]; 
+</script>
+
+<h2>best way to loop is a standart loop</h2>
+
+<p id="loop"></p>
+
+<script>
+	var fruits, text, fLen, i; 
+	fruits = ["Banana", "Berry", "Mango", "strawberry"]; 
+	fLen = fruits.length; 
+
+    text = "<ul>";
+    for (i = 0; i < fLen; i++) {
+    	text += "<li>" + fruits[i] + "</li>"; 
+    }
+
+    text += "</ul>"; 
+
+    document.getElementById("loop").innerHTML = text; 
+
+</script>
+
+
+<p id="loop1"></p>
+
+<script>
+	var fruits, text; 
+	fruits = ["Banana", "Berry", "Mango", "strawberry"]; 
+
+	text = "<ul>"; 
+	fruits.forEach(myFunction); 
+	text += "</ul>"; 
+	document.getElementById("loop1").innerHTML = text; 
+
+
+function myFunction(value) {
+	text += "<li>" + value + "</li>"; 
+}
+</script>
+
+
+
+<h2> push method add new element</h2>
+
+<button onclick="myFunction1()">Click to add</button>
+
+<p id="but"></p>
+
+<script>
+	var fruits = ["Banana", "Berry", "Mango", "strawberry"]; 
+	document.getElementById("but").innerHTML = fruits; 
+
+
+	function myFunction1(){
+		fruits.push("lemon"); 
+		document.getElementById("but").innerHTML = fruits; 
+	}
+</script>
+
+
+<h2>JavaScript Arrays</h2>
+
+<p>Adding elements with high indexes can create undefined "holes" in an array.</p>
+
+<p id="hole"></p>
+
+<script>
+var fruits, text, fLen, i;
+fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[6] = "Lemon";
+
+fLen = fruits.length;
+text = "";
+for (i = 0; i < fLen; i++) {
+    text += fruits[i] + "<br>";
+}
+document.getElementById("hole").innerHTML = text;
+</script>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The new ECMASCRIPT 5 method isArray returns true when used on an array:</p>
+
+<p id="isarray"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("isarray").innerHTML = Array.isArray(fruits);
+</script>
+
+<h1>JS Array Methods</h1>
+
+<h2>toString();</h2>
+
+<p id="tostr"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("tostr").innerHTML = fruits.toString();
+</script>
+
+<h2>join()</h2>
+
+<p id="join"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("join").innerHTML = fruits.join(" * ");
+</script>
+
+<h2>pop();</h2>
+
+<p id="pop"></p>
+<p id="pop2"></p>
+<p id="pop3"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+    document.getElementById("pop").innerHTML = fruits; 
+    fruits.pop(); 
+
+    document.getElementById("pop2").innerHTML = fruits; 
+
+    document.getElementById("pop3").innerHTML = fruits.pop();
+</script>
+
+<h2>Push();</h2>
+
+<p id="push"></p>
+<p id="push1"></p>
+<p id="push2"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("push").innerHTML = fruits;
+	fruits.push("Strawberry");
+	document.getElementById("push2").innerHTML = fruits; 
+
+</script>
+
+<h2>shift();</h2>
+
+<p id="push6"></p>
+<p id="shift1"></p>
+<p id="shift2"></p>
+
+<p>test</p>
+
+
+<script>
+	var fr3 = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("push6").innerHTML = fr3;
+	document.getElementById("shift1").innerHTML = fr3.shift();
+	document.getElementById("shift2").innerHTML = fr3; 
+</script>
+
+<h2>unshift()</h2>
+
+<p id="unsft"></p>
+<p id="unsft1"></p>
+<p id="unsft2"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("unsft").innerHTML = fruits; 
+	document.getElementById("unsft1").innerHTML = fruits.unshift("lemon");
+	document.getElementById("unsft2").innerHTML = fruits; 
+</script>
+
+	<p><b>Note:</b> The unshift() method does not work properly in Internet Explorer 8 and earlier, the values will be inserted, but the return value will be <em>undefined</em>.</p>
+
+<h2>teh length property easy way to add new element to an array</h2>
+
+<p id="lngth"></p>
+
+<button onclick="myFunction3()">add new element</button>
+
+<script>
+	var fruits7 = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("lngth").innerHTML = fruits7;
+
+	function myFunction3() {
+		fruits7[fruits7.length] = "Lemon"; 
+		document.getElementById("lngth").innerHTML = fruits7; 
+	}
+</script>
+
+<h2>Deleting elements leaces undefined holes in an array</h2>
+
+<p id="del1"></p>
+<p id="del2"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("del1").innerHTML = "The first element is:" + fruits[0];
+	delete fruits[0]; 
+
+	document.getElementById("del2").innerHTML = "The first element is:" + fruits[0];
+
+</script>
+
+
+<h2> splice(); </h2
+
+	<p>splice add new elements</p>
+<button onclick="myFunction5()">Add new elements</button>
+<button onclick="MyFun1()">Remove elements</button>
+	
+<p id="spl1"></p>
+<p id="spl2"></p>
+<p id="spl3"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("spl1").innerHTML = "Original Array: <br>" + fruits; 
+	function myFunction5() {
+		fruits.splice(2, 0, "Lemon", "Strawberry");
+		document.getElementById("spl2").innerHTML = "New Array: <br>"+ fruits;
+	}
+
+	function MyFun1() {
+		fruits.splice(0, 2);
+		document.getElementById("spl3").innerHTML = "Next one array: <br>" + fruits;
+	}
+
+</script>
+
+<h2> Merging (Concatering) Arrays </h2>
+
+<p id="concat"></p>
+<p id="concat2"></p>
+
+<script>
+	var myGirls = ["Cecilie", "Lone"];
+	var myBoys = ["Emil", "Tomy", "Josh"]; 
+	var myChildren = myGirls.concat(myBoys);
+
+	document.getElementById("concat").innerHTML = myChildren;
+
+	var myChildren2 = myChildren.concat(["stormy", "dony"]);
+
+	document.getElementById("concat2").innerHTML = myChildren2;
+
+
+</script>
+
+
+<h2>slice() part of array</h2>
+
+
+<p id="sl1"></p>
+<p id="sl2"></p>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	var citrus = fruits.slice(2); 
+
+    var citrus2 = fruits.slice(1, 4); 
+
+    document.getElementById("sl1").innerHTML = citrus; 
+    document.getElementById("sl2").innerHTML = citrus2;
+</script>
+
+<h1> JS Sorting Arrays </h1>
+
+<h2>sort(); sorts an array alphabetically</h2>
+
+<p id="sor"></p>
+<p id="sor2"></p>
+
+<button onclick="myFunc2()">Sort alpha</button>
+<br>
+<p> By combining sort() and reverse() you can sort an array in descending order.</p>
+<button onclick="myFunc3()">Sort again</button>
+
+<script>
+	var fruits = ["Banana", "Apple", "Kiwi", "Peach"];
+	document.getElementById("sor").innerHTML = fruits;
+
+	function myFunc2() {
+		fruits.sort();
+
+		document.getElementById("sor").innerHTML = fruits;
+	}
+
+	function myFunc3() {
+		fruits.sort();
+		fruits.reverse();
+
+		document.getElementById("sor2").innerHTML = fruits;
+	}
+</script>
+
+<h2>Numeric Sort</h2>
+
+<p id="numbOrg"></p>
+<p id="numb"></p>
+<p id="numb1"></p>
+
+<button onclick="myFuncNum()">increase</button>
+<button onclick="myFuncNum1()"">decrease</button>
+
+<script>
+	var points = [100, 25, 3, 5, 19, 49];
+
+	document.getElementById("numbOrg").innerHTML = points;
+
+	function myFuncNum(){
+		points.sort(function(a, b){return a - b}); 
+
+		document.getElementById("numb").innerHTML = points;
+	} 
+
+function myFuncNum1(){
+	points.sort(function(a,b){return b - a});
+
+	document.getElementById("numb1").innerHTML = points; 
+}
+
+</script>
+
+<h2>Random sort function</h2>
+
+<p id="rnd"></p> 
+
+<button onclick="myFuncR()"> Randomize</button>
+
+<script>
+	var points = [1, 13, 19, 100, 40, 35];
+	document.getElementById("rnd").innerHTML = points; 
+
+	function myFuncR() {
+		points.sort(function(a, b){return 0.5 - Math.random()});
+	
+	document.getElementById("rnd").innerHTML = points; 
+	} 
+
+
+</script>
+
+<h2>JS Array Sort - lowest </h2>
+
+<p> The lowest number is <span id="low"></span>.</p> 
+<p> The highest numner is <span id="high"></span>.</p>
+
+<script>
+	var points = [12, 23, 19 , 13, 89];
+	points.sort(function(a, b){return a - b}); 
+
+	document.getElementById("low").innerHTML = points[0]; 
+
+	points.sort(function(a, b){return b - a});
+
+	document.getElementById("high").innerHTML = points[0]; 
+</script>
+
+
+<h2>Math.max.apply()</h2>
+
+<p>The highest number is: <span id="max"></span></p>
+<p> The lowest number is: <span id="low2"></span></p>
+
+<script>
+	var points = [13, 19, 3, 2, 32, 24];
+	document.getElementById("max").innerHTML = myArrayMax(points); 
+
+	function myArrayMax(arr) {return Math.max.apply(null, arr);}
+
+	document.getElementById("low2").innerHTML = myArrayMin(points); 
+	function myArrayMin(arr) {return Math.min.apply(null, arr);}
+</script>
+
+<h2>My Min / Max JS Methods</h2>
+
+<p>The Max is: <span id="max1"></span></p>
+<p>The Min is: <span id="Min1"></span></p>
+
+
+<script>
+	var points = [13, 20, 3, 19, 39, 54];
+	document.getElementById("max1").innerHTML = myArrayMax1(points);
+
+	function myArrayMax1(arr) {
+		var len = arr.length; 
+		var max = -Infinity; 
+		while (len --) {
+			if (arr[len] > max) {
+				max = arr[len]; 
+			}
+		}
+	return max;
+}
+
+	document.getElementById("Min1").innerHTML = myArrayMin1(points); 
+
+	function myArrayMin1(arr) {
+		var len = arr.length; 
+		var min = Infinity;
+		while (len --) {
+			if (arr[len] < min) {
+				min = arr[len]; 
+			}
+		}
+		return min; 
+	
+	}
+</script>
+
+<h2> Sort with objects</h2>
+
+<button onclick="myFuncS()">Sort on year</button>
+
+<p id="obj"></p>
+
+<script>
+	var cars = [
+	{type:"Volvo", year:2016},
+{type:"Saab", year:2001},
+{type:"BMW", year:2010}]
+
+displayCars();
+
+function myFuncS() {
+	cars.sort(function(a, b){return a.year - b.year}); 
+	displayCars(); 
+}
+
+function displayCars() {
+	document.getElementById("obj").innerHTML = cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
+
+<h2>Click the buttons to sort car objects on type.</h2>
+
+<button onclick="myFunct()">Sort</button>
+
+<p id="string2"></p>
+
+<script>
+var cars = [
+{type:"Volvo", year:2016},
+{type:"Saab", year:2001},
+{type:"BMW", year:2010}]
+
+displayCars();
+
+function myFunct() {
+    cars.sort(function(a, b){
+        var x = a.type.toLowerCase();
+        var y = b.type.toLowerCase();
+        if (x < y) {return -1;}
+        if (x > y) {return 1;}
+        return 0;
+    });
+    displayCars();
+}
+
+function displayCars() {
+  document.getElementById("string2").innerHTML =
+  cars[0].type + " " + cars[0].year + "<br>" +
+  cars[1].type + " " + cars[1].year + "<br>" +
+  cars[2].type + " " + cars[2].year;
+}
+</script>
+
+</body>
+</html>

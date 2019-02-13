@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Math methods</title>
+	<meta charset="utf-8">
+
+	<style>
+		h2 {color: black}
+		body{color: white;
+			background-color: tomato; 
+			font-size: 30px;}
+	</style>
+</head>
+<body>
+
+<h1>JS Math Methods</h1>
+
+
+<p id="demo"></p>
+
+<script>
+	document.getElementById("demo").innerHTML = Math.PI;
+</script>
+
+<h2>Math.round()</h2>
+
+<p id="round"></p>
+<p id="round1"></p>
+
+<script>
+	document.getElementById("round").innerHTML = Math.round(4.7);
+document.getElementById("round1").innerHTML = Math.round(4.3);
+</script>
+
+<h2>Math.pow(x,y)</h2>
+
+<p id="pow"></p>
+
+<script>
+	document.getElementById("pow").innerHTML = Math.pow(4,2); 
+
+</script>
+
+<h2>Math.sqrt();</h2>
+
+<p id="sqrt"></p>
+
+<script>
+	document.getElementById("sqrt").innerHTML = Math.sqrt(64);
+</script>
+
+<h2>Math.abd()</h2>
+
+<p id="abs"></p>
+
+
+<script>
+	document.getElementById("abs").innerHTML = Math.abs(-4.7);
+	</script>
+
+
+<h2>Math.ceil() Math.floor()</h2>
+
+<p id="ceil"></p>
+<p id="floor"></p>
+
+
+<script>
+	document.getElementById("ceil").innerHTML = Math.ceil(4.4); 
+	document.getElementById("floor").innerHTML = Math.floor(4.4);
+</script>
+
+<h2>Math.min(); Math.max(); Math.random();</h2>
+
+
+<p id="max"></p>
+<p id="min"></p>
+<p id="random"></p>
+
+
+<script>
+	document.getElementById("max").innerHTML = Math.max(20, 1, 56, -5);
+	document.getElementById("min").innerHTML = Math.min(-30, 3, 0, 10); 
+	document.getElementById("random").innerHTML = Math.random(); //return random between 0 and 1
+
+
+</script>
+
+<h2>JavaScript Random Integers</h2>
+<h2>Math.random() used with Math.floor() can be used to return random integers.</h2>
+
+
+<p id="rnd"></p>
+<p id="rnd1"></p>
+<p id="rnd2"></p>
+<p id="rnd3"></p>
+
+
+<script>
+	document.getElementById("rnd").innerHTML = Math.floor(Math.random() * 10); // from 0 to 9 
+    document.getElementById("rnd1").innerHTML = Math.floor(Math.random() * 11); // from 0 to 10
+    document.getElementById("rnd2").innerHTML = Math.floor(Math.random() * 10) + 1; // from 0 to 10
+    document.getElementById("rnd3").innerHTML = Math.floor(Math.random() * 100); // from 0 to 99 
+</script>
+
+<h2>JavaScript Math.random()</h2>
+
+<h2>Every time you click the button, getRndInteger(min, max) returns a random number between 1 and 10 (both included):</h2>
+
+<button onclick="document.getElementById('rnd5').innerHTML = getrnd(1, 10);">Rnd from 0 to 9</button>
+
+<button onclick="document.getElementById('rnd6').innerHTML = getrnd2(1, 10);">Rnd from 0 to 10</button>
+
+<p id="rnd5"></p>
+<p id="rnd6"></p>
+
+<script>
+	function getrnd(min, max){
+		return Math.floor(Math.random() * (max - min)) + min; 
+	}
+
+	function getrnd2(min, max){
+		return Math.floor(Math.random() * (max - min + 1)) + min; 
+	}
+</script>
+
+</body>
+</html>

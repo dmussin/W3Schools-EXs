@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Array Ilereation Methods</title>
+<meta charset="utf-8">
+	<style>
+	h2{color: white;}
+		body{background-color: tomato; 
+			font-size: 30px; 
+			color: black;}
+	
+	</style>
+</head>
+<body>
+<h2>Array.forEach();</h2>
+
+<p>Call a function once for each array element</p>
+
+<p id="demo"></p>
+
+<script>
+	var txt = ""; 
+	var numbers = [45, 5, 4, 13, 19, 23]; 
+	numbers.forEach(myFunc);
+	document.getElementById("demo").innerHTML = txt; 
+
+	function myFunc(value, index, array) {txt = 
+		txt + value + "<br>"}; 
+</script>
+
+<h2>Array.map(); creates new array by performing a func on each array element</h2>
+
+<p id="map"></p>
+<p id="map2"></p>
+
+<script>
+	var num = [13, 15, 19, 32, 44]; 
+	var num2 = num.map(myFunc1); 
+
+	document.getElementById("map").innerHTML = num2; 
+
+document.getElementById("map2").innerHTML = "Начальные числа" + num; 
+	function myFunc1 (value, index, array) {
+		return value * 2; 
+	}
+</script>
+
+<h2>Array.filter();</h2>
+
+<p>passes the test</p>
+
+<p id="filter"></p>
+
+<button onclick="myFuncInc()"">Increase</button>
+
+<script>
+	var num = [45, 9, 12, 16, 19, 25, 87];
+	var over19 = num.filter(myFunc2); 
+
+	document.getElementById("filter").innerHTML = over19; 
+
+	function myFunc2(value, index, array){
+		return value > 18; 
+	}
+
+    over19.forEach(myFuncInc);
+
+	function myFuncInc() {
+		over19.sort(function(a,b){return a - b}); 
+
+		document.getElementById("filter").innerHTML = over19; 
+	}
+</script>
+
+<h2>Array.reduce;</h2>
+
+<p> finds the sum of all numbers in an Array: </p>
+
+<p id="sum"></p>
+
+<script>
+	var numbers = [45, 4, 9, 16, 25]; 
+	var sum = numbers.reduce(myFunc3); 
+
+	document.getElementById("sum").innerHTML = "The sum is:" + sum; 
+
+function myFunc3(total, value, index, array) {
+	return total + value; 
+}
+
+</script>
+
+<h2> Array.every(); check if all array value pass the test</h2>
+
+
+<p id="allover"></p>
+<p id="allover1"></p>
+
+<script>
+	var num = [4, 19, 13, 7, 34, 23]; 
+	var all = num.every(myFunc4); 
+	var all2 = num.every(myFunc5); 
+
+document.getElementById("allover").innerHTML ="All numbers over 15 is " + all; 
+
+document.getElementById("allover1").innerHTML= "All over 1 is " + all2;
+
+function myFunc5 (value) { 
+return value > 1;}
+
+    function myFunc4 (value, index, array){
+    	return value > 15; 
+    }
+</script>
+
+<h2> Array.some(); check if all array value pass the test</h2>
+
+
+<p id="some"></p>
+<p id="some1"></p>
+
+<script>
+	var num = [4, 19, 13, 7, 34, 23]; 
+	var all = num.some(myFunc6); 
+	var all2 = num.some(myFunc7); 
+
+document.getElementById("some").innerHTML ="All numbers over 15 is " + all; 
+
+document.getElementById("some1").innerHTML= "All over 1 is " + all2;
+
+function myFunc6 (value) { 
+return value > 1;}
+
+    function myFunc7 (value, index, array){
+    	return value > 15; 
+    }
+</script>
+
+
+<h2>JavaScript Array.indexOf()</h2>
+
+
+<p id="indx"></p>
+
+<script>
+var fruits = ["Apple", "Orange", "Apple", "Mango"];
+var a = fruits.indexOf("Apple");
+document.getElementById("indx").innerHTML = "Apple is found in position " + (a + 1);
+</script>
+
+<p>The indexOf() does not work in Internet Explorer 8 and earlier versions.</p>
+
+<h2>JavaScript Array.find()</h2>
+
+<p id="first1"></p>
+
+<script>
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction);
+
+document.getElementById("first1").innerHTML = "First number over 18 is " + first;
+
+function myFunction(value, index, array) {
+    return value > 18;
+}
+</script>
+
+</body>
+</html>

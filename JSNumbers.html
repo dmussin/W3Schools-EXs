@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Numbers</title>
+
+	<style>
+		body{
+			background-color: #009900;
+			color: white;
+			// text-shadow: 1px, 1px, 1px, black;
+			font-size: 40px; 
+		}
+	</style>
+</head>
+<body>
+<p>Floating pont aritmethic is not always 100% accurate</p>
+
+<p id="float"></p>
+
+<script>
+	// var x= 0.2 + 0.1; // 0.30000000000000004
+	var x=((0.2 * 10) + (0.1 * 10))/10; // 0.3 
+	document.getElementById("float").innerHTML = "0.2 + 0.1 = " + x; 
+</script>
+
+<p> Common mistake</p>
+
+<p id="common"></p>
+
+<script>
+	var x = 10; 
+	var y = 20; 
+	var z = x + y; 
+	document.getElementById("common").innerHTML = "The result is: " + z;//+ x + y; 
+</script>
+
+<p>A common mistake is to expect this result to be 102030:</p>
+
+<p id="common2"></p>
+
+<script>
+	var x = 10;
+	var y = 20; 
+	var z = "30"; 
+	var result = x + y + z; 
+
+	document.getElementById("common2").innerHTML = result; 
+</script>
+
+<p> Numeric Strings</p>
+
+<p id="numOperations"></p>
+
+
+<script>
+	var x = "100"; 
+	var y = "10";
+	var z = x / y; 
+	var t = x * y; 
+	var u = x + y; 
+	var i = x - y; 
+
+	document.getElementById("numOperations").innerHTML = z + "<br>" + t + "<br>" + u + "<br>" + i; 
+</script>
+
+<p>You can use the global JavaScript function isNaN() to find out if a value is a number:</p>
+
+<p id="isnan"></p>
+
+<script>
+var x = 100 / "Apple";
+document.getElementById("isnan").innerHTML = isNaN(x);
+</script>
+
+
+<p>If you use NaN in a mathematical operation, the result will also be NaN:</p>
+
+<p id="math"></p>
+
+<script>
+var x = NaN;
+var y = 5;
+document.getElementById("math").innerHTML = x + y;
+</script>
+
+<p>If you use NaN in a mathematical operation, the result can be a concatenation:</p>
+
+<p id="math1"></p>
+
+<script>
+var x = NaN;
+var y = "5";
+document.getElementById("math1").innerHTML = x + y;
+</script>
+
+
+<p>Infinity</p>
+
+<p id="infinity"></p>
+
+<script>
+	var myNumb = 2; 
+	var txt = ""; 
+	while (myNumb != Infinity) {
+		myNumb = myNumb * myNumb; 
+		txt = txt + myNumb + "<br>"; 
+	}
+
+	document.getElementById("infinity").innerHTML = txt; 
+
+</script>
+
+<br> 
+<br> 
+
+<p>The toString() method can output numbers from base 2 to 36:</p>
+
+<p id="10x"></p>
+
+<script>
+var myNumber = 32;
+document.getElementById("10x").innerHTML =
+"32 = " + "<br>" + 
+" Decimal " + myNumber.toString(10) + "<br>" +
+" Hexadecimal " + myNumber.toString(16) + "<br>" +
+" Octal " + myNumber.toString(8) + "<br>" +
+" Binary " + myNumber.toString(2);
+</script>
+
+<p>A number can be an object, but there is no need to create a number as an object.</p>
+
+<p id="obj"></p>
+
+<script>
+var x = 123;
+var y = new Number(123);
+document.getElementById("obj").innerHTML = typeof x + "<br>" + typeof y;
+</script>
+
+<h1>JS Numbers Methods </h1>
+
+<p> toString() convert a number to a string</p>
+
+<p id="tostr"></p>
+
+<script>
+	var x = 123; 
+	document.getElementById("tostr").innerHTML = x.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString(); 
+</script>
+
+<h2> The toExponential() method returns a string, with the number rounded and written using exponential notation </h2>
+
+<p id="expo"></p>
+
+<script>
+	var x = 9.656; 
+	document.getElementById("expo").innerHTML = x.toExponential() + "<br>" + x.toExponential(2) + "<br>"
+	+ x.toExponential(4) + "<br>" + x.toExponential(6); 
+</script>
+
+<h2> toFixed() method rounds a number to a given number of digits </h2>
+<p> toFixed(2) works great with money</p>
+
+
+<p id="tofix"></p>
+
+<script>
+	var x = 9.965; 
+	document.getElementById("tofix").innerHTML = x.toFixed() + "<br>" + x.toFixed(2) + "<br>" + x.toFixed(4) + 
+	"<br>" + x.toFixed(6); 
+</script>
+
+<h2>The toPrecision() returns a string, with number length</h2>
+
+<p id="prec"></p>
+
+<script>
+	var x = 9.676; 
+	document.getElementById("prec").innerHTML = x.toPrecision() + "<br>" + x.toPrecision(2) + "<br>" + x.toPrecision(4) + "<br>" + x.toPrecision(6); 
+
+
+</script>
+
+<h2>The valueOf() returns a number as a number</h2>
+
+<p id="valueof"></p>
+
+<script>
+var x = 123;
+
+document.getElementById("valueof").innerHTML = 
+    x.valueOf() + "<br>" +
+    (123).valueOf() + "<br>" +
+    (100 + 23).valueOf();
+</script>
+
+<h1> JS Global Methods</h1>
+
+<p>The Number() method converts variables to numbers </p>
+
+<p id="numb"></p>
+
+<script>
+	document.getElementById("numb").innerHTML = 
+    Number(true) + "<br>" +
+    Number(false) + "<br>" +
+    Number("10") + "<br>" + 
+    Number("  10") + "<br>" +
+    Number("10  ") + "<br>" +
+    Number(" 10  ") + "<br>" +
+    Number("10.33") + "<br>" + 
+    Number("10,33") + "<br>" +
+    Number("10 33") + "<br>" +
+    Number("John");
+
+    Number(new Date("1970-1-1")); 
+</script>
+
+<p> parseInt() convert strings to numbers</p>
+
+<p id="parse"></p>
+
+<script>
+	document.getElementById("parse").innerHTML = 
+    parseInt("10") + "<br>" +
+    parseInt("10.33") + "<br>" +
+    parseFloat("10.33455") + "<br>" +
+    parseInt("10 6") + "<br>" +    
+    parseInt("10 years") + "<br>" +    
+    parseInt("years 10"); 
+</script>
+</body>
+</html>

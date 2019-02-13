@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Conversion Type</title>
+    <meta charset="utf-8">
+	<style>
+		h1, h2 {color: black;}
+		body {color: white; 
+			background-color: tomato; 
+			font-size: 30px; }
+	</style>
+</head>
+<body>
+
+<h1>the Constructor property</h1>
+<h2>The constructor property returns the constructor function for a variable or an 
+object.</h2>
+
+<p id="demo"></p>
+
+<script>
+	document.getElementById("demo").innerHTML  = "john".constructor + "<br>" + 
+	(3.14).constructor + "<br>" + 
+	false.constructor + "<br>" + 
+	[1, 2, 3, 4, 5].constructor + "<br>" + 
+	{name:'Jonh', age:34}.constructor + "<br>" + 
+	new Date().constructor + "<br>" + function () {}.constructor; 
+</script>
+
+<h2>JavaScript Arrays</h2>
+
+<p>This "home made" isArray() function returns true when used on an array:</p>
+
+<p id="demo1"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo1").innerHTML = isArray(fruits);
+
+function isArray(myArray) {
+   // return myArray.constructor.toString().indexOf("Array") > -1;
+   // cheking array function 
+
+   return myArray.constructor === Array;
+}
+</script>
+
+<h2> Converting </h2>
+
+<p id="convr"></p>
+
+<script>
+	var x = []; 
+	document.getElementById("convr").innerHTML = (5 + null) + "<br>" + 
+	("5" + null) + "<br>" + 
+	("5" + 2) + "<br>" + ("5" - 2) + "<br>" + 
+	("5" * "2") + "<br>" + ("5" / "2") + "<br>" 
+</script>
+
+</body>
+</html>

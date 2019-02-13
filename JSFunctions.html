@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Function</title>
+</head>
+<body>
+	<p id = "demo"></p>
+	<br> 
+<br>
+<br>
+	<p id="demo1"></p>
+	<br> 
+<br>
+<br>
+	<p id="demo2"></p>
+	<br> 
+<br>
+<br>
+	<p id="demo3"></p>
+	<br> 
+<br>
+<br>
+	<p id="demo4"></p>
+	<br> 
+<br>
+<br>
+	<p id="demo5"></p>
+	<script>
+var x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+function myFunction(a,b) {
+	return a * b;
+}
+
+</script>
+<br> 
+<br>
+<br>
+<script>
+
+function toCelsius(f) {
+	return (5/9) * (f-32);
+}
+
+document.getElementById("demo2").innerHTML = toCelsius(77);
+</script>
+
+<script>
+
+function toCelsius(f) {
+	return (5/9) * (f-32);
+}
+
+document.getElementById("demo1").innerHTML = toCelsius;
+</script>
+
+
+<script>
+	document.getElementById("demo3").innerHTML = "The temp is" + toCelsius(90) + "Celsius"; 
+
+	function toCelsius(fahrenheit) {
+		return (5/9) * (fahrenheit-32);
+		// body...
+	}
+</script>
+
+
+<script> 
+myFunction();
+
+function myFunction() {
+	var carName = "Volvo";
+	document.getElementById("demo4").innerHTML = typeof carName + " " + carName;
+	// body...
+}
+
+
+
+document.getElementById("demo5").innerHTML = typeof carName; 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS For Loop</title>
+	<meta charset="utf-8">
+
+	<style>
+		h2 {color: white;}
+		body {background-color: tomato;
+			color: black;
+			font-size: 30px;}
+	</style>
+</head>
+<body>
+
+<h2>JS For Loop </h2>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+	var cars = ["BMW", "VW", "Ford", "Mercedes", "Fiat"]; 
+	var cars2 = ["BMW", "VW", "Ford", "Mercedes", "Fiat"]; 
+
+	var text = " "; 
+	var text2 = ""; 
+	var i; 
+	var len = cars2.length; 
+
+	var y = 3;
+
+	for (i  = 0; i < cars.length; i++) {
+		text += cars[i] + "<br>";
+	} 
+	document.getElementById("demo").innerHTML = text; 
+
+
+
+
+
+
+    for (; y < len; y++) {
+    	text2 += cars2[y] + "<br>"; 
+    }
+
+document.getElementById("demo2").innerHTML = text2;
+
+</script>
+
+<br>
+<br>
+
+<p id="for1"></p>
+
+<script>
+	var text = "";
+	var i; 
+	for (i = 0; i < 5; i ++) {
+		text += "The number is " + i + "<br>"; 
+	}
+
+	document.getElementById("for1").innerHTML = text; 
+</script>
+
+
+<p id="for2"></p>
+
+<script>
+	var cars = ["BMW", "VW", "MB", "Ford"]; 
+	var i, len, text; 
+
+	for (i = 0, len = cars.length, text = ""; i < len; i++) 
+		{text += cars[i] + "<br>";
+}
+
+document.getElementById("for2").innerHTML = text; 
+</script>
+
+
+
+<h2>Statment 3 is ommitted</h2>
+
+<p id="for3"></p>
+
+<script>
+	var cars = ["BMW", "VW", "Ford", "Mercedes", "Fiat"]; 
+
+	var i = 0; 
+	var len = cars.length; 
+	var text = ""; 
+
+	for (; i < len; ) {
+		text += cars[i] + "<br>"; 
+		i ++; 
+	}
+
+	document.getElementById("for3").innerHTML = text; 
+</script>
+
+
+<h2>The for/in statement loops through the properties of an object.</h2>
+
+<p id="forin"></p>
+
+<script>
+	var txt = ""; 
+	var person = {fname:"John", lname:"Doe", age:25}; 
+    var x; 
+
+    for (x in person) {
+    	txt += person[x] + " "; 
+    }
+
+    document.getElementById("forin").innerHTML = txt; 
+</script>
+
+
+<h2> JS While </h2>
+
+<p id="while1"></p>
+
+
+<script>
+	var text = " "; 
+	var i = 0;
+
+	while (i < 20) {
+		text += "<br>The number is " + i; 
+		i++;
+	}
+
+	document.getElementById("while1").innerHTML = text; 
+</script>
+
+
+<p id="whiledo"></p>
+
+<script>
+	var text = " "; 
+	var i = 0; 
+
+	do {
+		text += "<br> number - " + i; 
+		i++; 
+
+	}
+     while (i < 12); 
+
+     document.getElementById("whiledo").innerHTML = text; 
+</script>
+
+
+<h2>While / FOR </h2>
+
+
+<p id="while2"></p>
+<p id="for4"></p>
+
+<script>
+	var cars = ["Mercedes", "BMW", "Ford", "Alfa"]; 
+	var cars2 = ["Mercedes", "BMW", "Ford", "Alfa"]; 
+	var i = 0; 
+	var t = 0;
+
+	var text = " "; 
+    var text2 = " "; 
+
+	cars.sort();
+
+	while (cars[i]) {
+		text += cars[i] + "<br>"; 
+		i++; 
+	}
+
+	document.getElementById("while2").innerHTML = text; 
+
+    
+
+	for (; cars2[t];) {
+		text2 += cars2[t] + "<br>";
+		t++; 
+	}
+
+	document.getElementById("for4").innerHTML = text2; 
+</script>
+
+
+<h1> JS Break and Continue </h1>
+
+
+<h2>loop with a break </h2>
+
+
+<p id="breakid"></p>
+
+
+<script>
+	var txt9 = ""; 
+	var p; 
+
+	for (p = 0; p < 10; p++) {
+		if (p === 4) {break; }
+
+		txt9 += "The number is " + p + "<br>"; 
+	}
+
+	document.getElementById("breakid").innerHTML = txt9; 
+	
+</script>
+
+<h2> A loop which will skip the step where i = 3.</h2>
+
+<p id="contin"></p>
+
+<script>
+	var txt = ""; 
+	var i;
+	for (i = 0; i < 10; i ++) {
+		if (i === 3) {continue;} 
+		txt += "The number " + i + " is OK" + "<br>"; 
+	}
+	document.getElementById("contin").innerHTML = txt;
+</script>
+
+<h2>JS Break </h2>
+
+<p id="breaklist"></p>
+
+<script>
+	var cars = ["BMW", "VW", "Ford", "Mercedes", "Fiat"]; 
+	var text = ""; 
+
+	list: {
+		text += cars[0] + "<br>";
+		text += cars[1] + "<br>"; 
+		break list; 
+		text += cars[2] + "<br>"; 
+		
+		text += cars[3] + "<br>"; 
+		text += cars[4] + "<br>"; 
+}
+document.getElementById("breaklist").innerHTML = text; 
+</script>
+
+</body>
+</html>

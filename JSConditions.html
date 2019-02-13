@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Conditions</title>
+	<meta charset="utf-8">
+
+	<style>
+		h2 {color: black;}
+		body {background-color: tomato;
+		color: white; 
+		font-size: 30px; 
+		}
+	</style>
+</head>
+<body>
+
+	<h2>Display "Good day!" if the hour less than 18:00</h2>
+
+	<p id="demo">Good Evening!</p>
+
+	<script>
+		if (new Date().getHours() < 20) {
+			document.getElementById("demo").innerHTML = "Good day!"; 
+		}
+	</script>
+
+
+<h2>ELSE </h2>
+
+<button onclick="myFunc()">Click</button>
+
+<p id="elseif"></p>
+
+<script>
+	function myFunc() {
+		var hours = new Date().getHours(); 
+		var greeting; 
+
+		if (hours < 18){
+			greeting = "Good day"; 
+		} else {
+			greeting = "Good evening"; 
+		}
+		document.getElementById("elseif").innerHTML = greeting; 
+	}
+</script>
+
+<h2> ELSE IF</h2>
+
+<button onclick="myFunc()">Try</button>
+
+<p id="elseifelse"></p>
+
+<script>
+	function myFunc() {
+		var greeting; 
+		var time = new Date().getHours();
+
+		if (time < 10) {
+			greeting = "Good morning"; 
+		} else if (time < 18) {
+			greeting = "Good day";
+		} else {
+			greeting = "Good evening";
+		}
+		document.getElementById("elseifelse").innerHTML = greeting; 
+		}
+	
+</script>
+
+<h1> JS Switch Statment</h1>
+
+<p id="weekday"></p>
+
+<script>
+	var day; 
+	switch (new Date().getDay()) { 
+		case 0:
+		day = "Sunday";
+		break; 
+		case 1:
+		day = "Monday";
+		break;
+		case 2:
+		day = "Tuesday";
+		break;
+		case 3:
+		day = "Wednesday"; 
+	    break;
+	    case 4:
+	    day = "Thursday";
+	    break; 
+	    case 5: 
+	    day = "Friday";
+	    break; 
+	    case 6: 
+	    day = "Saturday";
+
+	}
+
+	document.getElementById("weekday").innerHTML = "Сегодня " + day; 
+</script>
+
+<p id="weekends"></p>
+
+<script>
+	var text; 
+	switch (new Date().getDay()) {
+		case 4:
+		case 5:  
+		text = "Soon it is Weekend"; 
+		break; 
+
+		case 0: 
+		case 6: 
+		text = "It is Weekend"; 
+		break; 
+
+		default: 
+		text = "Looking forward to the Weekend"; 
+
+	}
+
+document.getElementById("weekends").innerHTML = text; 
+
+</script>
+
+<p id="onoff"></p>
+
+<script>
+	var x = 1; 
+
+	switch (x) {
+		case 0: 
+		text = "Off"; 
+		break;
+
+		case 1: 
+		text = "On"; 
+		break; 
+
+		default: 
+		text = "No Value Found"; 
+}
+
+document.getElementById("onoff").innerHTML =x + " IS " + text; 
+</script>
+
+</body>
+</html>

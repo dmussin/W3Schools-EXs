@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Date Objects</title>
+	<meta charset="utf-8">
+
+	<style>
+		h2 {color: white;}
+
+		body {background-color: tomato; 
+			color: black;
+			font-size: 30px;}
+	</style>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+	<script>
+		var d = new Date(); 
+		document.getElementById("demo").innerHTML  = d; 
+		document.getElementById("demo1").innerHTML = d.toUTCString();
+		document.getElementById("demo2").innerHTML = d.toDateString();
+
+	</script>
+
+	<h2> new Date(7 numbers) </h2>
+
+	<p id="newdate7"></p>
+
+	<script>
+		var d = new Date (2018, 11, 24, 10); 
+		document.getElementById("newdate7").innerHTML = d; 
+	</script>
+
+<h2> new Date(string)</h2>
+
+<p id="newdatestr"></p>
+
+<script>
+	var d = new Date("May 23, 2019 12:12:12"); 
+	document.getElementById("newdatestr").innerHTML = d; 
+</script>
+
+<h2>JavaScript new Date()</h2>
+
+<p>Using new Date(milliseconds), creates a new date object as January 1, 1970, 00:00:00 Universal Time (UTC) plus the milliseconds:  86400000 - 1 day</p>
+
+<p id="millis"></p>
+
+<script>
+	var d = new Date(86400000); 
+	document.getElementById("millis").innerHTML = d; 
+</script>
+
+<h1> JS DATE FORMATS </h1>
+
+<h2> ISO Dates</h2>
+
+<p id="iso"></p>
+
+<script>
+	var d = new Date("2019-04-27"); 
+	var d1 = new Date("2019-04"); 
+	var d2 = new Date("2019"); 
+	var d3 = new Date("2019-04-27T12:00:00Z");
+	var d4 = new Date("2019-04-27T12:00:00-06:00");
+	document.getElementById("iso").innerHTML = d + "<br>" + d1 + "<br>" + d2 + "<br>" + d3 + "<br>" + d4; 
+</script>
+
+<h2>Short Date</h2>
+
+<p id="shortd"></p>
+
+<script>
+	var d = new Date("03/25/2015"); 
+	document.getElementById("shortd").innerHTML = d; 
+</script>
+
+<h2>JavaScript Date.parse()</h2>
+
+<p>Date.parse() returns the number of milliseconds between the date and January 1, 1970:</p>
+
+<p id="parse"></p>
+<p id="parse2"></p>
+
+<script>
+	var msec = Date.parse("April 27, 2019"); 
+	document.getElementById("parse").innerHTML = msec; 
+
+    var msec2 = Date.parse("Apr 27 2019"); 
+    var d = new Date(msec2); 
+
+    document.getElementById("parse2").innerHTML = d; 
+
+
+
+</script>
+
+<h1>JS Get Date Methods()</h1>
+
+<p id="month"></p>
+<p id="month1"></p>
+<script>
+	var d = new Date(); 
+	var month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	document.getElementById("month").innerHTML = month[d.getMonth()];
+
+
+	document.getElementById("month1").innerHTML = d.getMonth() + 1; 
+</script>
+
+<h2>Compare Dates</h2>
+
+<p id="compared"></p>
+
+<script>
+	var today, someday, text;
+
+today = new Date(); 
+someday = new Date(); 
+
+someday.setFullYear(2100, 0, 24); 
+
+if (someday > today) {
+	text = "Today is before January 24, 2100."; 
+} else { text = "Today is atfer January 24, 2100."}
+
+document.getElementById("compared").innerHTML = text; 
+</script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> JS String Methods</title> 
+
+<style>
+h1, h2 {color: black;}
+	body{background-color: tomato; color: white; font-size: 30px;}
+}
+}
+</style>
+</head> 
+z
+<body>
+	<p id="demo"></p>
+	
+
+	<script>
+		var txt = "ufriugberuigberg";
+		document.getElementById("demo").innerHTML = txt.length;
+
+</script>
+
+<p id="indexof"></p>
+
+<script>
+		var str = "Please locate where 'locator' occurs!";
+		var pos = str.indexOf("locator");
+		document.getElementById("indexof").innerHTML = pos;
+	</script>
+
+
+<p id="lastindex"></p>
+
+<script>
+	var str = "please locate it"; 
+	var pos = str.lastIndexOf("locate");
+	document.getElementById("lastindex").innerHTML = pos; 
+</script>
+
+<p id="startingPOS"></p>
+
+<script>
+	var str = "PLEASE LOCATE WHERE 'LOCATE' OCCURS!";
+	var pos = str.indexOf("LOCATE", 15);
+	document.getElementById("startingPOS").innerHTML = pos;
+</script>
+
+<p id="search"></p>
+
+<script>
+	var str = "PLEASE LOCATE WHERE 'LOCATE' OCCURS!";
+	var pos = str.search("LOCATE");
+	document.getElementById("search").innerHTML = pos;
+</script>
+
+<p>The search() method cannot take a second start position argument.<br>
+The indexOf() method cannot take powerful search values (regular expressions).
+Reagan foxx,phoenix marie, kiley jay towel girl </p>
+
+
+<br> 
+<br> 
+
+<p>The slice() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="slice"></p>
+
+<script>
+	var str = "Apple Banana Kiwi"; 
+	var res = str.slice(6,16);
+	document.getElementById("slice").innerHTML = res;
+
+	// If a parameter is negative, the position is counted from the end of the string.
+
+</script>
+
+<p>Substr() is similat to slice(). second param spec the lenght</p>
+
+<p id="substr"></p>
+
+
+<script>
+	var str = "Banana, Kiwi, Lemon"; 
+	var res =str.substr(7,4);
+	document.getElementById("substr").innerHTML = res; 
+</script>
+<p> If the first parameter is negative, the position counts from the end of the string.</p>
+
+<br>
+<br>
+
+<p>Replacing String Content </p>
+
+<button onclick="myFunction3()">Replace the word	
+</button>
+
+
+<p id="replace">Please visit Microsoft!</p>
+
+<script>
+	function myFunction3() {
+		var str = document.getElementById("replace").innerHTML;
+		var txt = str.replace("Microsoft", "W3Schools"); 
+		document.getElementById("replace").innerHTML = txt;
+	}
+</script>
+
+<br>
+<br>
+
+<p id="replaceGlobal"></p>
+
+
+<script>
+	var str = "help us to find us"; 
+	var n = str.replace(/us/g, "me");
+	document.getElementById("replaceGlobal").innerHTML = n; 
+</script>
+
+
+<p>Click the button to alert the string with removed whitespace.</p>
+
+<button onclick="myFunction4()">Remove whitespace</button>
+
+<p><strong>Note:</strong> The trim() method is not supported in Internet Explorer 8 and earlier versions.</p>
+
+<script>
+function myFunction4() {
+    var str = "       Hello World!       ";
+    alert(str.trim());
+}
+</script>
+
+<br><br><br>
+
+
+<p>chartAt()</p>
+
+<p id="chart"></p>
+
+<script>
+	var str = "Hello";
+	document.getElementById("chart").innerHTML = str.charAt(1);
+
+</script>
+
+<p id="char"></p>
+
+<script>
+	var str = "Hello";
+	document.getElementById("char").innerHTML = str.charCodeAt(1);
+
+</script>
+
+
+<p id="separator"></p>
+
+<script>
+var str = "Hello";
+var arr = str.split("");
+var text = "";
+var i;
+for (i = 0; i < arr.length; i++) {
+    text += arr[i] + "<br>"
+}
+document.getElementById("separator").innerHTML = text;
+</script>
+
+
+<p>Click "Try it" to display the first array element, after a string split.</p>
+
+<button onclick="myFunction6()">Split it</button>
+
+<p id="split"></p>
+
+<script>
+function myFunction6() {
+    var str = "a,b,c,d,e,f";
+    var arr = str.split(",");
+    document.getElementById("split").innerHTML = arr[3];
+}
+</script>
+
+<h2>Click the button to do a global search for is in a string </h2>
+
+<p id="globalsearch"></p>
+
+<p>Is this all there is? is</p>
+
+<button onclick="myFunc()"> Global search</button>
+
+<script>
+	function myFunc() {
+		var str = "Is this all there is? is ";
+		var pattr = /is/g;
+		var result = str.match(pattr);
+		document.getElementById("globalsearch").innerHTML = result; 
+	}
+</script>
+
+<h2>Click the button to do a multiline search for "is" at the beginning of each line in a string.</h2>
+
+<button onclick="myFunc1()">Multi line search</button>
+
+<p id="multi"></p>
+
+<p>\nIs th\nis it? is Is iS</p>
+
+<script>
+	function myFunc1() {
+		var str = "\nIs th\nis it? \is \Is iS"; 
+		var patt1 = /^is/m; 
+		var result = str.match(patt1);
+		document.getElementById("multi").innerHTML = result; 
+	}
+</script>
+
+<h2>JavaScript Regular Expressions</h2>
+
+<h2>Search for an "e" in the next paragraph:</h2>
+
+<p id="p01">The best things in life are free!</p>
+
+<p id="re"></p>
+<p id="re2"></p>
+
+<script>
+	text = document.getElementById("p01").innerHTML; 
+	document.getElementById("re").innerHTML = /e/.test(text);
+
+    var obj = /es/.exec("The best things in life are free!");
+    document.getElementById("re2").innerHTML = "i Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input;
+
+</script>
+</body>
+</html>  
